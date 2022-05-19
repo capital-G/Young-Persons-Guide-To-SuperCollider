@@ -12,6 +12,7 @@ execute:
 
 exclude_patterns:
 - venv/*
+- _docker_build/*
 
 # Define the name of the latex output file for PDF builds
 latex:
