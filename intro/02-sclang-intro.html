@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Quickstart to scsynth" href="03-server-intro.html" />
-    <link rel="prev" title="Introduction to SuperCollider" href="01-intro.html" />
+    <link rel="prev" title="Introduction" href="01-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01-intro.html">
-     Introduction to SuperCollider
+     Introduction
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -301,6 +301,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-global-dictionary">
+     Using a global dictionary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-environment">
+     Using environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determine-the-type-of-a-variable">
      Determine the type of a variable
     </a>
@@ -308,8 +318,62 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-line-comments">
+     Single line comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multi-line-comments">
+     Multi line comments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions">
    Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arguments">
+     Arguments
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#style">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         |
+        </span>
+        <span class="pre">
+         |
+        </span>
+       </code>
+       style
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arg-style">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         arg
+        </span>
+       </code>
+       style
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namespace">
+   Namespace
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -420,6 +484,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-global-dictionary">
+     Using a global dictionary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-environment">
+     Using environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determine-the-type-of-a-variable">
      Determine the type of a variable
     </a>
@@ -427,8 +501,62 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-line-comments">
+     Single line comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multi-line-comments">
+     Multi line comments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions">
    Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arguments">
+     Arguments
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#style">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         |
+        </span>
+        <span class="pre">
+         |
+        </span>
+       </code>
+       style
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arg-style">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         arg
+        </span>
+       </code>
+       style
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namespace">
+   Namespace
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -758,15 +886,498 @@ Here we will create a dictionary which maps the symbol <code class="docutils lit
 </div>
 <div class="section" id="multiline-statements">
 <h2>Multiline statements<a class="headerlink" href="#multiline-statements" title="Permalink to this headline">¶</a></h2>
+<p>Before we start exploring <em>sclang</em> further we want to mention on how to execute mulitple lines or statements at once which will become necessary at some point.</p>
+<p>To run multiple statements at once we need to surround the statement with <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code>, so</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<span class="s2">&quot;hello&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+<span class="s2">&quot;world&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Move the cursor into the brackets and hit <code class="docutils literal notranslate"><span class="pre">ctrl+enter</span></code> on Linux/Windows or <code class="docutils literal notranslate"><span class="pre">cmd+enter</span></code> on macOS.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In this documentation we will omit these brackets on multiline statements.
+Each cell should be regarded as a multi-line block, surrounded by <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code>.</p>
+</div>
 </div>
 <div class="section" id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Variables allow us to store data under a name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 46
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
+<span class="nx">b</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>But <em>sclang</em> has a restriction that may seem strange: global variables can only have one character!
+Setting a variable with more than one character</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">abc</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;.postln; result = {abc = 42;}.value(); postf(&quot;-&gt; %
+                                                               
+  &quot;, result); &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>results in</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ERROR: Variable &#39;abc&#39; not defined.
+</pre></div>
+</div>
+<p>There are some styles to circumvent this from which we will show two.</p>
+<div class="section" id="using-a-global-dictionary">
+<h3>Using a global dictionary<a class="headerlink" href="#using-a-global-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>The idea is to create a dictionary under a variable name (often <code class="docutils literal notranslate"><span class="pre">q</span></code>) which will allow us to create a mapping of symbol keys to abitrary values, even nested dictionaries.
+Sounds more complex than it actually is but it is really powerful tool.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// init the dictionary</span>
+<span class="nx">q</span> <span class="o">=</span> <span class="p">();</span>
+<span class="nx">q</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; (  )
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// add an key/value pair</span>
+<span class="nx">q</span><span class="p">[</span><span class="ss">\abc</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; ( &#39;abc&#39;: 42 )
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">q</span><span class="p">[</span><span class="ss">\abc</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 44
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// create a nested dictionary</span>
+<span class="nx">q</span><span class="p">[</span><span class="ss">\foo</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="ss">\bar</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="ss">\baz</span><span class="o">:</span> <span class="mi">44</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; ( &#39;foo&#39;: ( &#39;bar&#39;: 42, &#39;baz&#39;: 44 ), &#39;abc&#39;: 42 )
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// access it</span>
+<span class="nx">q</span><span class="p">[</span><span class="ss">\foo</span><span class="p">][</span><span class="ss">\bar</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 42
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-environment">
+<h3>Using environment<a class="headerlink" href="#using-environment" title="Permalink to this headline">¶</a></h3>
+<p>The usage of an <a class="reference external" href="https://doc.sccode.org/Classes/Environment.html">Environment</a> is already pretty advanced within SuperCollider but for now we can simply use it.</p>
+<p>It simply allows us to create variables with multiple chars by prepending a <code class="docutils literal notranslate"><span class="pre">~</span></code> to it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="nx">abc</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="nx">abc</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 46
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try out both ways to see what suits you best, but be aware: there is a certain style of programming <em>sclang</em> for which the <code class="docutils literal notranslate"><span class="pre">~</span></code> writing will lead to troubles, but we will care about this at a later stage and should not confuse you for now.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>By the way, <a class="reference external" href="https://doc.sccode.org/Classes/Environment.html">Environment</a> uses internally a dictionary as well.
+The single character global variables are actually members of the <a class="reference external" href="https://doc.sccode.org/Classes/Interpreter.html">Interpreter</a> class, see <a class="reference external" href="https://github.com/supercollider/supercollider/blob/b38fbc1bac91c698ddaf8c880f987b282a2112c9/SCClassLibrary/Common/Core/Kernel.sc#L594-L599">here</a>.</p>
+</div>
+</div>
 <div class="section" id="determine-the-type-of-a-variable">
 <h3>Determine the type of a variable<a class="headerlink" href="#determine-the-type-of-a-variable" title="Permalink to this headline">¶</a></h3>
+<p>To figure out the type of a variable we can execute the method <code class="docutils literal notranslate"><span class="pre">.class</span></code> on our variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="kr">class</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; Integer
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p><em>sclang</em> allows to ways to create comments</p>
+<div class="section" id="single-line-comments">
+<h3>Single line comments<a class="headerlink" href="#single-line-comments" title="Permalink to this headline">¶</a></h3>
+<p>Created by prepending <code class="docutils literal notranslate"><span class="pre">//</span></code> to a line</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// &quot;this is a comment&quot;.postln;</span>
+<span class="s2">&quot;this is not a comment&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is not a comment
+-&gt; this is not a comment
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multi-line-comments">
+<h3>Multi line comments<a class="headerlink" href="#multi-line-comments" title="Permalink to this headline">¶</a></h3>
+<p>Created by surounding a block with <code class="docutils literal notranslate"><span class="pre">\*</span></code> and <code class="docutils literal notranslate"><span class="pre">*\</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="cm">/* some comment</span>
+<span class="cm">that goes across</span>
+<span class="cm">multpile lines</span>
+<span class="cm">*/</span>
+<span class="mi">42</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 46
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions are a crucial building block of <em>sclang</em> and are first class citizens, meaning that variables can not just hold data but also functions.
+This also means that all our functions are anonymous, so without a name. We can simply refer to them via a variable.</p>
+<p>The content of a function is surrounded by <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hello world&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a Function
+</pre></div>
+</div>
+</div>
+</div>
+<p>To execute the function we have multiple ways in <em>sclang</em>.
+We can either use the <code class="docutils literal notranslate"><span class="pre">.value</span></code> method of the function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world
+-&gt; hello world
+</pre></div>
+</div>
+</div>
+</div>
+<p>or simply use <code class="docutils literal notranslate"><span class="pre">.()</span></code> on the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world
+-&gt; hello world
+</pre></div>
+</div>
+</div>
+</div>
+<p>As our variable <code class="docutils literal notranslate"><span class="pre">f</span></code> is a placeholder for a function we can also run it without referencing to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;now run&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">}.();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>now run
+-&gt; now run
+</pre></div>
+</div>
+</div>
+</div>
+<p>As mentioned before every statement in <em>sclang</em> also returns a value - this is also true for our function which will simply return the last statement of the function as a return statement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;this is string A&quot;</span><span class="p">;</span>
+    <span class="s2">&quot;and this is another string&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a Function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.();</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>and this is another string
+-&gt; and this is another string
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h3>
+<p>Functions are really powerful because they also can react to dynamic input which allows us to abstract and encapsule certain sequences.
+There are two ways in <em>sclang</em> to add arguments to our function.</p>
+<p>We both times want to write a function which simply takes two arguments and returns the sum of both.
+Remember that the last statement within a function will also be returned in <em>sclang</em>.</p>
+<div class="section" id="style">
+<h4><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">|</span></code> style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span><span class="o">|</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="o">|</span>
+    <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a Function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="arg-style">
+<h4><code class="docutils literal notranslate"><span class="pre">arg</span></code> style<a class="headerlink" href="#arg-style" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span><span class="kd">arg</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a Function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 9
+</pre></div>
+</div>
+</div>
+</div>
+<p>It comes down to a matter of preference which you want to use but it is good to know both ways as you will come across both writings when reading documentation or other tutorials.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><em>sclang</em> also implements some functional programming paradigms, see <a class="reference external" href="https://doc.sccode.org/Reference/Functions.html">Functions</a> and <a class="reference external" href="https://doc.sccode.org/Reference/Partial-Application.html">partial application</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="namespace">
+<h2>Namespace<a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h2>
+<p>Namespaces (or <em>closures</em>) are allow us to create a new context in which we can define variables.
+As these are not global variables but local variables (we will see in a minute what the difference is) we can also use variable names with more than one character.</p>
+<p>A namespace is everything that is encapsulated in a multi line statement, so within <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="nx">foo</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 46
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this means they are only available within the namespace and not in an outside (or new) namespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">foo</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;.postln; result = {foo;}.value(); postf(&quot;-&gt; %
+                                                         
+  &quot;, result); &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this context we can not access <code class="docutils literal notranslate"><span class="pre">foo</span></code> anymore because it resides in a different namespace.</p>
+<p>We need to define the variables of the namespace at the beginneg of the namespace and prepend <code class="docutils literal notranslate"><span class="pre">var</span></code> to it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hello&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">world</span> <span class="o">=</span> <span class="s2">&quot;world&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does not work because we declare a variable after a statement.
+A way to fix this would be</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">world</span><span class="p">;</span>
+<span class="s2">&quot;hello&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+<span class="nx">world</span> <span class="o">=</span> <span class="s2">&quot;world&quot;</span><span class="p">;</span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+world
+-&gt; world
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that each function also creates a new namespace, but we need to declare our variables always at the top of a namespace!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span><span class="o">|</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="o">|</span>
+    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a Function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 84
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
@@ -814,7 +1425,7 @@ Here we will create a dictionary which maps the symbol <code class="docutils lit
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to SuperCollider</p>
+            <p class="prev-next-title">Introduction</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03-server-intro.html" title="next page">

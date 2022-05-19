@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to SuperCollider &#8212; A Young Person&#39;s Guide to SuperCollider</title>
+    <title>Introduction &#8212; A Young Person&#39;s Guide to SuperCollider</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Introduction to SuperCollider
+     Introduction
     </a>
    </li>
    <li class="toctree-l2">
@@ -251,37 +251,6 @@ const thebe_selector_output = ".output, .cell_output"
    Starting SuperCollider
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#executing-statements-in-sclang">
-   Executing statements in
-   <em>
-    sclang
-   </em>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-in-sclang">
-   Variables in
-   <em>
-    sclang
-   </em>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selecting-an-audio-device">
-   Selecting an audio device
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-execute-code">
-   How to execute code
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -292,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to SuperCollider</h1>
+                <h1>Introduction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -317,37 +286,6 @@ const thebe_selector_output = ".output, .cell_output"
    Starting SuperCollider
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#executing-statements-in-sclang">
-   Executing statements in
-   <em>
-    sclang
-   </em>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-in-sclang">
-   Variables in
-   <em>
-    sclang
-   </em>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#selecting-an-audio-device">
-   Selecting an audio device
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-execute-code">
-   How to execute code
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -357,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-supercollider">
-<h1>Introduction to SuperCollider<a class="headerlink" href="#introduction-to-supercollider" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-supercollider">
 <h2>What is SuperCollider<a class="headerlink" href="#what-is-supercollider" title="Permalink to this headline">¶</a></h2>
 <p>SuperCollider is a free and open programming environment for sound development.
@@ -383,93 +321,6 @@ It can run on Windows, Linux, macOS, iOS, Android, Raspberry Pi and much more.</
 </div>
 <p>in the <em>Post window</em>, which indicates that <em>sclang</em> was started successfully and we can now start programming SuperCollider via sclang.</p>
 <p>The document you see allows us to enter sclang statements that we can run in the interpreter of sclang.</p>
-</div>
-<div class="section" id="executing-statements-in-sclang">
-<h2>Executing statements in <em>sclang</em><a class="headerlink" href="#executing-statements-in-sclang" title="Permalink to this headline">¶</a></h2>
-<p>Before we will output sound we want to explore some basic concepts on how we can execute statements in <em>sclang</em>.</p>
-</div>
-<div class="section" id="variables-in-sclang">
-<h2>Variables in <em>sclang</em><a class="headerlink" href="#variables-in-sclang" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="selecting-an-audio-device">
-<h2>Selecting an audio device<a class="headerlink" href="#selecting-an-audio-device" title="Permalink to this headline">¶</a></h2>
-<p>To output sound in SuperCollider we need the <strong>server</strong> <em>scsynth</em>
-Before we start the server to generate some audio we need to check the input and output device of the server so we can actually hear something.
-We can see the detected audio devices via</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">ServerOptions</span><span class="p">.</span><span class="nx">devices</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; [ Studio 1824c, BlackHole 16ch, MacBook Pro Microphone, MacBook Pro Speakers, Soundflower (2ch), Soundflower (64ch), ZoomAudioD, Aggregate Device, MotuBlackhole, BlackHole Studio1824c, Fireface BlackHole, BlackHoleExtern, Zomm1824c, ExternalStudio1824c ]
-</pre></div>
-</div>
-</div>
-</div>
-<p>For me, I want to use <em>MacBook Pro Speakers</em> as my output device, so we will tell the server, which is our audio engine <em>scsynth</em>, to use this as an output device.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">outDevice</span> <span class="o">=</span> <span class="s2">&quot;MacBook Pro Speakers&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a ServerOptions
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">boot</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; localhost
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">400</span><span class="p">)}.</span><span class="nx">play</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; Synth(&#39;temp__0&#39; : 1001)
-</pre></div>
-</div>
-</div>
-</div>
-<p>For more configuration options check out <a class="reference external" href="https://doc.sccode.org/Classes/ServerOptions.html">ServerOptions</a> or use the extenios/Quark <a class="reference external" href="https://github.com/gusano/ServerOptionsGui">ServerOptionsGui</a> which you can install and use via</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Quarks</span><span class="p">.</span><span class="nx">install</span><span class="p">(</span><span class="s2">&quot;ServerOptionsGui&quot;</span><span class="p">);</span>
-<span class="nb">thisProcess</span><span class="p">.</span><span class="nx">recompile</span><span class="p">;</span>
-<span class="nx">ServerOptionsGui</span><span class="p">();</span>
-<span class="nx">s</span><span class="p">.</span><span class="nx">reboot</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; CmdPeriod
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="how-to-execute-code">
-<h2>How to execute code<a class="headerlink" href="#how-to-execute-code" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

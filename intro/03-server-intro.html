@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01-intro.html">
-     Introduction to SuperCollider
+     Introduction
     </a>
    </li>
    <li class="toctree-l2">
@@ -230,6 +230,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-an-audio-device">
+   Selecting an audio device
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -242,6 +255,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-an-audio-device">
+   Selecting an audio device
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -250,6 +276,80 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="quickstart-to-scsynth">
 <h1>Quickstart to <em>scsynth</em><a class="headerlink" href="#quickstart-to-scsynth" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="selecting-an-audio-device">
+<h2>Selecting an audio device<a class="headerlink" href="#selecting-an-audio-device" title="Permalink to this headline">¶</a></h2>
+<p>To output sound in SuperCollider we need the <strong>server</strong> <em>scsynth</em>
+Before we start the server to generate some audio we need to check the input and output device of the server so we can actually hear something.
+We can see the detected audio devices via</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">ServerOptions</span><span class="p">.</span><span class="nx">devices</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; [ Studio 1824c, BlackHole 16ch, MacBook Pro Microphone, MacBook Pro Speakers, Soundflower (2ch), Soundflower (64ch), ZoomAudioD, Aggregate Device, MotuBlackhole, BlackHole Studio1824c, Fireface BlackHole, BlackHoleExtern, Zomm1824c, ExternalStudio1824c ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For me, I want to use <em>MacBook Pro Speakers</em> as my output device, so we will tell the server, which is our audio engine <em>scsynth</em>, to use this as an output device.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">outDevice</span> <span class="o">=</span> <span class="s2">&quot;MacBook Pro Speakers&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a ServerOptions
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">boot</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; localhost
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">400</span><span class="p">)}.</span><span class="nx">play</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; Synth(&#39;temp__0&#39; : 1001)
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more configuration options check out <a class="reference external" href="https://doc.sccode.org/Classes/ServerOptions.html">ServerOptions</a> or use the extenios/Quark <a class="reference external" href="https://github.com/gusano/ServerOptionsGui">ServerOptionsGui</a> which you can install and use via</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Quarks</span><span class="p">.</span><span class="nx">install</span><span class="p">(</span><span class="s2">&quot;ServerOptionsGui&quot;</span><span class="p">);</span>
+<span class="nb">thisProcess</span><span class="p">.</span><span class="nx">recompile</span><span class="p">;</span>
+<span class="nx">ServerOptionsGui</span><span class="p">();</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">reboot</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; CmdPeriod
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
