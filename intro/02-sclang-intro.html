@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickstart to sclang &#8212; A Young Person&#39;s Guide to SuperCollider</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quickstart to scsynth" href="03-server-intro.html" />
+    <link rel="prev" title="Introduction to SuperCollider" href="01-intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">A Young Person's Guide to SuperCollider</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   A Young Person’s Guide to SuperCollider
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Introduction to SuperCollider
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-intro.html">
+     Introduction to SuperCollider
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Quickstart to
+     <em>
+      sclang
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-server-intro.html">
+     Quickstart to
+     <em>
+      scsynth
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/intro/02-sclang-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/capital-G/Young-Persons-Guide-To-SuperCollider"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/capital-G/Young-Persons-Guide-To-SuperCollider/issues/new?title=Issue%20on%20page%20%2Fintro/02-sclang-intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/capital-G/Young-Persons-Guide-To-SuperCollider/main?urlpath=tree/intro/02-sclang-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exectuing-statements">
+   Exectuing statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primitives">
+   Primitives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer">
+     Integer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floats">
+     Floats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#booleans">
+     Booleans
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#symbols">
+     Symbols
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nil">
+     nil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrays">
+     Arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiline-statements">
+   Multiline statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-the-type-of-a-variable">
+     Determine the type of a variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-structures">
+   Control structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation">
+   Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exceptions">
+   Exceptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Quickstart to sclang</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exectuing-statements">
+   Exectuing statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#primitives">
+   Primitives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer">
+     Integer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floats">
+     Floats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#booleans">
+     Booleans
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#symbols">
+     Symbols
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nil">
+     nil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrays">
+     Arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiline-statements">
+   Multiline statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-the-type-of-a-variable">
+     Determine the type of a variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-structures">
+   Control structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation">
+   Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exceptions">
+   Exceptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="quickstart-to-sclang">
+<h1>Quickstart to <em>sclang</em><a class="headerlink" href="#quickstart-to-sclang" title="Permalink to this headline">¶</a></h1>
+<p><em>SuperCollider</em> and <em>sclang</em> are often used synomynous, but it helps for a better understanding to keep those terms separated.</p>
+<div class="section" id="exectuing-statements">
+<h2>Exectuing statements<a class="headerlink" href="#exectuing-statements" title="Permalink to this headline">¶</a></h2>
+<p>The most simple statement in <em>sclang</em> is probably the calculation of a number.
+To run the calculation simply type in the statement seen below and hit <code class="docutils literal notranslate"><span class="pre">ctrl+enter</span></code> on Windows/Linux and <code class="docutils literal notranslate"><span class="pre">cmd+enter</span></code> on macOS while the cursor is in the same line of the statement to execute the line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>You will see the result <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">4</span></code> in the post window. Congrats on running the first calculation within SuperCollider.</p>
+<p>So how does the infamous <em>Hello World</em> program look like in SuperCollider?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello World&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+-&gt; Hello World
+</pre></div>
+</div>
+</div>
+</div>
+<p>We surround our string with <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and append a <code class="docutils literal notranslate"><span class="pre">.</span></code> to tell <em>sclang</em> to run the method <code class="docutils literal notranslate"><span class="pre">postln</span></code> on the string, which will print the string to our post window.
+We end the statement with a <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
+<p>But why do we see the string <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> two times?
+This is because the post window will also print the <em>return value</em> of the statement.
+In <em>sclang</em> every statement will return something - in our case the <code class="docutils literal notranslate"><span class="pre">postln</span></code> method returns the element it was called with, therefore we see <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> two times: Once due to our <code class="docutils literal notranslate"><span class="pre">postln</span></code> statement and once because the interpreter also prints the return value of our statement.</p>
+</div>
+<div class="section" id="primitives">
+<h2>Primitives<a class="headerlink" href="#primitives" title="Permalink to this headline">¶</a></h2>
+<p>Primitives are the building blocks of a programming language and form the most basic types of data storage.
+<em>sclang</em> is a programming language which is heavily inspired from programming languages such as …. - but if you are not familiar with those it is not a problem as we will take a look at how to come around.</p>
+<div class="section" id="integer">
+<h3>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<p>We have already seen above the use of integers which represent the natural numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 42
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="floats">
+<h3>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h3>
+<p>Flating point numbers represent the real numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mf">4.343</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 4.343
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<p>We have already seen a string in our <em>Hello World</em> example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;a string&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a string
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="booleans">
+<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h3>
+<p>Every programming language needs to provide a way to represent the two boolean values.
+In <em>sclang</em> those are represented as <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">==</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; false
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">==</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; true
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="symbols">
+<h3>Symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h3>
+<p>Symbols are close to Strings but they are also really different.
+Instead of surrounding our string with <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> we prepend a <code class="docutils literal notranslate"><span class="pre">\</span></code> to it.
+Note that this writing restricts ourselves to not use a space in a symbol.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="ss">\symbol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; symbol
+</pre></div>
+</div>
+</div>
+</div>
+<p>So for what do we need the Symbol if we have a string? This is already an advanced topic, but basically we can say</p>
+<ul class="simple">
+<li><p>Use a string if you use a text</p></li>
+<li><p>Use a symbol if you want to reference something by a string</p></li>
+</ul>
+<p>Basically it boils down to</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;foo&quot;</span> <span class="o">===</span> <span class="s2">&quot;foo&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; false
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="ss">\foo</span> <span class="o">===</span> <span class="ss">\foo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; true
+</pre></div>
+</div>
+</div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">===</span></code> compares the memory address of the variable (and <code class="docutils literal notranslate"><span class="pre">==</span></code> compares it values).
+Checking for memory address is important when working with dictionaries, which store under a key (e.g. a symbol) some value (e.g. an integer).</p>
+</div>
+<div class="section" id="nil">
+<h3>nil<a class="headerlink" href="#nil" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">nil</span></code> is a special concept in programming language, often also associated with <code class="docutils literal notranslate"><span class="pre">None</span></code> or <code class="docutils literal notranslate"><span class="pre">null</span></code>.
+It represents empty data and is useful to see if something was set to e.g. an integer or if it was set not at all.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kc">nil</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; nil
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="arrays">
+<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h3>
+<p>Arrays or <em>lists</em> are a way to store multiple items and access them later via an <em>index</em> by accessing the <span class="math notranslate nohighlight">\(i\)</span>-th item of the array by surrounding it with <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code> behind our array.
+This is similiar to a notion of a vector from mathematics or like pages in a book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; [ a, 2, 4.0, true ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And accessing the <span class="math notranslate nohighlight">\(4\)</span>-th item from the array. Note that <em>sclang</em> is start counting at <span class="math notranslate nohighlight">\(0\)</span>, so we write <span class="math notranslate nohighlight">\(3\)</span> instead of <span class="math notranslate nohighlight">\(4\)</span>.
+This is common in most programming languages and you will get used to it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="ss">\foo</span><span class="p">,</span> <span class="kc">false</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; foo
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what happens if we access the 5-th item if our array only consists of 3 items?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; nil
+</pre></div>
+</div>
+</div>
+</div>
+<p>It will return <code class="docutils literal notranslate"><span class="pre">nil</span></code>, telling us that we accessed empty data.</p>
+</div>
+<div class="section" id="dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>Dictionaries allow us to store a value under a key.
+We surround them with <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code> and separate the key from the value with a <code class="docutils literal notranslate"><span class="pre">:</span></code> and separate multiple key/value pairs in our dictionary with an <code class="docutils literal notranslate"><span class="pre">,</span></code>.
+Here we will create a dictionary which maps the symbol <code class="docutils literal notranslate"><span class="pre">a</span></code> to the integer <span class="math notranslate nohighlight">\(42\)</span> and the symbol <code class="docutils literal notranslate"><span class="pre">b</span></code> to integer <span class="math notranslate nohighlight">\(43\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="ss">\a</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="ss">\b</span><span class="o">:</span> <span class="mi">43</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; ( &#39;a&#39;: 42, &#39;b&#39;: 43 )
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access the value of a dictionary similiar to an array, but instead of the position we use the key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="ss">\a</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="ss">\b</span><span class="o">:</span> <span class="mi">43</span><span class="p">)[</span><span class="ss">\a</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Accessing a non existing key will return us <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="ss">\a</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="ss">\b</span><span class="o">:</span> <span class="mi">43</span><span class="p">)[</span><span class="ss">\c</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; nil
+</pre></div>
+</div>
+</div>
+</div>
+<p>As noted earlier it is important to use symbols instead of strings for our dictionary keys, which is demonstrated by this small example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">43</span><span class="p">)[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; nil
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiline-statements">
+<h2>Multiline statements<a class="headerlink" href="#multiline-statements" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="determine-the-type-of-a-variable">
+<h3>Determine the type of a variable<a class="headerlink" href="#determine-the-type-of-a-variable" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="control-structures">
+<h2>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "sc_kernel"
+        },
+        kernelOptions: {
+            kernelName: "sc_kernel",
+            path: "./intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'sc_kernel'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01-intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to SuperCollider</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03-server-intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quickstart to <em>scsynth</em></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dennis Scheiba<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
