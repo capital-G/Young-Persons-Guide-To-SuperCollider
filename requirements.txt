@@ -1,1 +1,2 @@
 jupyter-book==0.12.3
+git+https://github.com/capital-G/sc_kernel.git
