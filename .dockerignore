@@ -1,0 +1,5 @@
+_build/
+_docker_build/
+.github/
+.ipynb_checkpoints/
+venv/
