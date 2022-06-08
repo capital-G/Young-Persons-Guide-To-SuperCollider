@@ -24,6 +24,13 @@ Glossary
         An alternative synth engine to :term:`scsynth` which is designed for multi-core processors.
 
     scide
+    SuperCollider IDE
         The integrated development environment for SuperCollider, written in Qt.
         The IDE allows in a simple way to write and navigate through :term:`sclang` code and also offers
         inspection tools for :term:`scsynth` such as a meter for loudness.
+
+    method
+        A function which is written within the class and attached to an object and has therefore access to the data of the object, e.g. :code:`"hello world".postln;`
+        where we need the content of the string in order to print it.
+        If the function is attached to a class but has not access to an object it is called a static method, e.g. :code:`Ndef.clear;` which clears all
+        Ndefs that were initiated and is therefore not attached to a single object.
