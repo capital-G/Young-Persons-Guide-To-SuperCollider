@@ -5,3 +5,4 @@ format: jb-book
 root: README.md
 chapters:
 - file: intro/intro.rst
+- file: glossary.rst
