@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Quickstart to scsynth" href="03-server-intro.html" />
-    <link rel="prev" title="Introduction" href="01-intro.html" />
+    <link rel="prev" title="What is SuperCollider?" href="01-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,39 +100,32 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Introduction to SuperCollider
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-intro.html">
+   What is SuperCollider?
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01-intro.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Quickstart to
-     <em>
-      sclang
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03-server-intro.html">
-     Quickstart to
-     <em>
-      scsynth
-     </em>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Quickstart to
+   <em>
+    sclang
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-server-intro.html">
+   Quickstart to
+   <em>
+    scsynth
+   </em>
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
@@ -379,12 +372,12 @@ const thebe_selector_output = ".output, .cell_output"
        style
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#default-parameters">
+       Default parameters
+      </a>
+     </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-chaining">
-     Method chaining
-    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#callbacks">
@@ -591,12 +584,12 @@ const thebe_selector_output = ".output, .cell_output"
        style
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#default-parameters">
+       Default parameters
+      </a>
+     </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-chaining">
-     Method chaining
-    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#callbacks">
@@ -1321,16 +1314,25 @@ Sounds more complex than it actually is but it is really powerful tool.</p>
 </div>
 </div>
 </div>
-<p>Try out both ways to see what suits you best, but be aware: there is a certain style of programming <em>sclang</em> for which the <code class="docutils literal notranslate"><span class="pre">~</span></code> writing will lead to troubles, but we will care about this at a later stage and should not confuse you for now.</p>
+<p>Try out both ways, the global dictionary and the environment approach, to see what suits you best.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><a class="reference external" href="https://doc.sccode.org/Classes/Environment.html">Environment</a> uses internally a dictionary as well.
 The single character global variables are actually members of the <a class="reference external" href="https://doc.sccode.org/Classes/Interpreter.html">Interpreter</a> class, see <a class="reference external" href="https://github.com/supercollider/supercollider/blob/b38fbc1bac91c698ddaf8c880f987b282a2112c9/SCClassLibrary/Common/Core/Kernel.sc#L594-L599">here</a>.</p>
 </div>
+<div class="admonition-questions-and-exercises admonition">
+<p class="admonition-title">Questions and exercises</p>
+<ol class="simple">
+<li><p>Why do we need environments or a global dictionary?</p></li>
+<li><p>How do you init an empty dictionary?</p></li>
+<li><p>Build a global dictionary <code class="docutils literal notranslate"><span class="pre">q</span></code> such that <code class="docutils literal notranslate"><span class="pre">q[\a]</span> <span class="pre">+</span> <span class="pre">q[\b]</span> <span class="pre">=</span> <span class="pre">40</span></code></p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="determine-the-type-of-a-variable">
 <h3>Determine the type of a variable<a class="headerlink" href="#determine-the-type-of-a-variable" title="Permalink to this headline">¶</a></h3>
-<p>To figure out the type of a variable we can execute the method <code class="docutils literal notranslate"><span class="pre">.class</span></code> on our variable.</p>
+<p>To figure out the type of a variable we can execute the method <code class="docutils literal notranslate"><span class="pre">.class</span></code> on our variable.
+This will print the name of the Class that is attached to the object and can help us understand what the variable actually holds we are inspecting and what we can do it by looking through the documentation of the attached Class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
@@ -1393,9 +1395,14 @@ Maybe something could not be solved in a trival way and had to be solved in a ve
 </div>
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p>Functions are a crucial building block of <em>sclang</em> and are first class citizens, meaning that variables can not just hold data but also functions.
-This also means that all our functions are anonymous, so without a name. We can simply refer to them via a variable.</p>
+<p>Functions are a crucial building block of any programming language and in <em>sclang</em> functions are first class citizens, meaning that variables can not just reference data but also functions.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For programmers: All our functions in SuperCollider are anonymous, meaning that we only refer to them via their associated variable, but they are not registered in a namespace on their own.
+But this is only true for functions that we define during runtime as SuperCollider only has methods in its standard library which are not anonymous.</p>
+</div>
 <p>The content of a function is surrounded by <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p>
+<p>A simple function associatde with variable <code class="docutils literal notranslate"><span class="pre">f</span></code> which simply prints “hello world” when executed can therefore look like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hello world&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;}</span>
@@ -1408,8 +1415,9 @@ This also means that all our functions are anonymous, so without a name. We can 
 </div>
 </div>
 </div>
-<p>To execute the function we have multiple ways in <em>sclang</em>.
-We can either use the <code class="docutils literal notranslate"><span class="pre">.value</span></code> method of the function</p>
+<p>Currently we have not seen “hello world” printed as we have not executed the function yet.
+To execute the function we have multiple ways in <em>sclang</em>.
+We can either use the <code class="docutils literal notranslate"><span class="pre">.value</span></code> method of the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
@@ -1417,13 +1425,12 @@ We can either use the <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world
--&gt; hello world
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; nil
 </pre></div>
 </div>
 </div>
 </div>
-<p>or simply use <code class="docutils literal notranslate"><span class="pre">.()</span></code> on the function.</p>
+<p>or simply use (or <em>call</em>) <code class="docutils literal notranslate"><span class="pre">.()</span></code> on the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.();</span>
@@ -1437,7 +1444,8 @@ We can either use the <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 </div>
-<p>As our variable <code class="docutils literal notranslate"><span class="pre">f</span></code> is a placeholder for a function we can also run it without referencing to a variable.</p>
+<p>As our variable <code class="docutils literal notranslate"><span class="pre">f</span></code> is a placeholder for a function we can also run it without referencing to a variable.
+This is only for demonstration purposes because a function which can only be called once and immediately is best not written as a function but can be written as is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;now run&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">}.();</span>
@@ -1451,12 +1459,17 @@ We can either use the <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 </div>
-<p>As mentioned before every statement in <em>sclang</em> also returns a value - this is also true for our function which will simply return the last statement of the function as a return statement.</p>
+<p>As mentioned before every statement in <em>sclang</em> also returns a value - this is also true for functions and is actually where the idea of a return value originates from.
+In sclang the function will simply return the last statement of the function as a return statement.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Make sure to surround any multi line statements with <code class="docutils literal notranslate"><span class="pre">(</span></code> and <code class="docutils literal notranslate"><span class="pre">)</span></code> as mentioned in <a class="reference internal" href="#multiline-statements"><span class="std std-ref">Multiline statements</span></a> as we omit them here for the sake of readability.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;this is string A&quot;</span><span class="p">;</span>
-    <span class="s2">&quot;and this is another string&quot;</span><span class="p">;</span>
+    <span class="s2">&quot;and this is another string&quot;</span><span class="p">;</span> <span class="c1">// this is the last statement</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -1467,6 +1480,7 @@ We can either use the <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 </div>
+<p>We can save the return value of the function into a variable again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.();</span>
@@ -1483,10 +1497,18 @@ We can either use the <code class="docutils literal notranslate"><span class="pr
 </div>
 <div class="section" id="arguments">
 <h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h3>
-<p>Functions are really powerful because they also can react to dynamic input which allows us to abstract and encapsule certain sequences.
-There are two ways in <em>sclang</em> to add arguments to our function.</p>
-<p>We both times want to write a function which simply takes two arguments and returns the sum of both.
+<p>Right now our functions did not react to its input because we have not providid any input.
+But functions, just like the mathematical ones, allow to have multiple inputs and react to their inputs.
+This combined with.
+Programming can be regarded as structurizing data via primitives and modify them via functions and there are different paradigms like <em>object oriented programming</em> which try to help you organizing this.</p>
+<p>Because functions can react dynamically they are really powerful as they allow us to abstract and encapsule logic.
+There are two ways in <em>sclang</em> to add arguments to our function and we will show both so you know em both, then just decide for yourself what you prefer.</p>
+<p>Both times want to write a function which simply takes two arguments <span class="math notranslate nohighlight">\(a, b\)</span> and returns the sum of both, <span class="math notranslate nohighlight">\(a+b\)</span>.
 Remember that the last statement within a function will also be returned in <em>sclang</em>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><em>sclang</em> also implements some functional programming paradigms, see <a class="reference external" href="https://doc.sccode.org/Reference/Functions.html">Functions</a> and <a class="reference external" href="https://doc.sccode.org/Reference/Partial-Application.html">partial application</a>.</p>
+</div>
 <div class="section" id="style">
 <h4><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">|</span></code> style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
@@ -1545,28 +1567,58 @@ Remember that the last statement within a function will also be returned in <em>
 </div>
 </div>
 <p>It comes down to a matter of preference which you want to use but it is good to know both ways as you will come across both writings when reading documentation or other tutorials.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p><em>sclang</em> also implements some functional programming paradigms, see <a class="reference external" href="https://doc.sccode.org/Reference/Functions.html">Functions</a> and <a class="reference external" href="https://doc.sccode.org/Reference/Partial-Application.html">partial application</a>.</p>
+</div>
+<div class="section" id="default-parameters">
+<h4>Default parameters<a class="headerlink" href="#default-parameters" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span> <span class="o">=</span> <span class="p">{</span><span class="o">|</span><span class="nx">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">b</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span>
+    <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; a Function
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="method-chaining">
-<h3>Method chaining<a class="headerlink" href="#method-chaining" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">f</span><span class="p">.();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-&gt; 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-questions-and-exercises admonition">
+<p class="admonition-title">Questions and exercises</p>
+<ol class="simple">
+<li><p>How could you return more than one value from a function?</p></li>
+<li><p>Write a function which multiplies all of its three inputs which default to <span class="math notranslate nohighlight">\(1\)</span> if not specified.</p></li>
+<li><p>Write a function which greets you with your name which you provide as input, such as “Hello Dave”. For this take a look at the <a class="reference external" href="https://doc.sccode.org/Classes/String.html#-format">format</a> method of the String class.</p></li>
+</ol>
+</div>
+</div>
 </div>
 <div class="section" id="callbacks">
 <h3>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h3>
-<p>If you have programmed JavaScript before you probably already are familiar with the concept of callbacks but if not you will learn it now.
-Basically a callback is a function which gets called when something happened - e.g. if something that took a long time has a result or if a value of something changed.</p>
+<p>If you have programmed JavaScript before you are probably familiar with the concept of callbacks but if not you will learn it now.
+Basically a callback is a function which gets called when somethings happened - e.g. if something that took a long time has terminated with a result or if a value of something changed.</p>
 <p>Assume we have a slider on a MIDI Controller and want to attach its value to a variable.
 A naive approach would be to simply write (note that this is pseudo-code and not actual sclang code)</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">MidiSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>but this would only associate the value of the MidiSlider only when we exectue the line, but would not update it afterwards.
-Here a callback comes in handy as we simply provide a function which will update the value of a with the value from the slider.
-But how do we get the current value of the slider? Well, a callback can also receive an argument, and the callback function is often called in such a way that the first argument is e.g. the new value.
-Wrapping everything together the pseudo-code from above would look something like</p>
+<p>but this would only associate the value of the MidiSlider only when we exectue the line, but would not update it afterwards when we move the MIDI slider.
+Here a callback comes in handy as we simply provide a function which will update the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> with the value from the slider.
+But how do we get the current value of the slider? Well, a callback function can also receive an argument, and the callback function is often called in such a way that the first argument is e.g. the new value of the MIDI slider.
+Wrapping everything together, the pseudo-code from above would look something like</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">MidiSlider</span><span class="p">.</span><span class="nx">onChange</span> <span class="o">=</span> <span class="p">{</span><span class="o">|</span><span class="nx">newValue</span><span class="o">|</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">newValue</span> <span class="p">};</span>
 </pre></div>
 </div>
@@ -1796,7 +1848,7 @@ Here we want to discuss some basic methods that <em>sclang</em> and <em>scide</e
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction</p>
+            <p class="prev-next-title">What is SuperCollider?</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03-server-intro.html" title="next page">

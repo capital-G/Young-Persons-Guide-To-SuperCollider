@@ -48,4 +48,4 @@ The build files will be saved to `_docker_build`.
 
 ## License
 
-GPL-2.0
+[CC-BY-NC-SA-4.0](https://tldrlegal.com/license/creative-commons-attribution-noncommercial-sharealike-4.0-international-(cc-by-nc-sa-4.0))
