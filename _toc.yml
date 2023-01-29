@@ -3,6 +3,10 @@
 
 format: jb-book
 root: README.md
-chapters:
-- file: intro/intro.rst
-- file: glossary.rst
+parts:
+  - caption: Introduction
+    chapters:
+    - file: intro/01-intro.ipynb
+    - file: intro/02-sclang-intro.ipynb
+    - file: intro/03-server-intro.ipynb
+    - file: glossary.rst
